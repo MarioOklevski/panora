@@ -1,27 +1,28 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image";
 import { MenuSection } from "@/components/menu-section"
 import { MenuItem } from "@/components/menu-item"
 import { CategoryNav } from "@/components/category-nav"
 
 const menuData = {
   COFFEE: [
-    { name: "Espresso", price: "80den" },
-    { name: "Macchiato", price: "90den" },
-    { name: "Espresso local", price: "50den" },
-    { name: "Macchiato local", price: "60den" },
-    { name: "Macchiato small", price: "70den" },
-    { name: "Latte", price: "100den" },
-    { name: "Nescafe", price: "100den" },
-    { name: "Turkish coffee", price: "70den" },
+    { name: "Espresso", price: "80den", description: "" },
+    { name: "Macchiato", price: "90den", description: "" },
+    { name: "Espresso local", price: "50den", description: "" },
+    { name: "Macchiato local", price: "60den", description: "" },
+    { name: "Macchiato small", price: "70den", description: "" },
+    { name: "Latte", price: "100den", description: "" },
+    { name: "Nescafe", price: "100den", description: "" },
+    { name: "Turkish coffee", price: "70den", description: "" },
   ],
   TEA: [
-    { name: "Black tea", price: "50den" },
-    { name: "Green tea", price: "60den" },
-    { name: "Herbal tea", price: "70den" },
-    { name: "Mint tea", price: "70den" },
-    { name: "Chamomile tea", price: "70den" },
+    { name: "Black tea", price: "50den", description: "" },
+    { name: "Green tea", price: "60den", description: "" },
+    { name: "Herbal tea", price: "70den", description: "" },
+    { name: "Mint tea", price: "70den", description: "" },
+    { name: "Chamomile tea", price: "70den", description: "" },
   ],
   BREAKFAST: [
     {
@@ -68,10 +69,10 @@ const menuData = {
     },
   ],
   DESSERTS: [
-    { name: "Tiramisu", price: "180den" },
-    { name: "Chocolate lava cake", price: "200den" },
-    { name: "Cheesecake", price: "190den" },
-    { name: "Crème brûlée", price: "210den" },
+    { name: "Tiramisu", price: "180den", description: "" },
+    { name: "Chocolate lava cake", price: "200den", description: "" },
+    { name: "Cheesecake", price: "190den", description: "" },
+    { name: "Crème brûlée", price: "210den", description: "" },
   ],
 }
 
@@ -103,28 +104,24 @@ export default function Home() {
           <div className="flex items-center justify-center gap-8 mb-8">
             {/* Logo icon */}
             <div className="relative">
-              <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Frame */}
-                <rect x="30" y="20" width="60" height="50" stroke="black" strokeWidth="3" fill="none" />
-                {/* Mountain silhouette */}
-                <path d="M35 50 L50 30 L65 50 L80 25 L90 50" fill="black" />
-                <rect x="35" y="50" width="50" height="20" fill="black" />
-                {/* Moon */}
-                <circle cx="25" cy="25" r="15" fill="white" />
-                {/* Teal accent lines */}
-                <path d="M30 75 Q60 78 90 75" stroke="#4A7C7E" strokeWidth="4" fill="none" />
-                <path d="M35 85 Q60 88 85 85" stroke="#4A7C7E" strokeWidth="4" fill="none" />
-                <path d="M40 95 Q60 98 80 95" stroke="#4A7C7E" strokeWidth="4" fill="none" />
-              </svg>
-            </div>
+              <Image
+                src="/header-logo.png"
+                alt="Example"
+                width={600}
+                height={400}
+                className="block sm:hidden"
+                loading="eager"
+              />
 
-            {/* Brand name */}
-            <h1
-              className="text-5xl md:text-7xl font-serif tracking-wider text-foreground"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              PANORA
-            </h1>
+              <Image
+                src="/logo.png"
+                alt="Example"
+                width={800}
+                height={600}
+                className="hidden sm:block"
+                loading="eager"
+              />
+            </div>
           </div>
         </header>
 

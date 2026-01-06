@@ -1,9 +1,9 @@
 "use client"
 
 interface CategoryNavProps {
-  categories: string[]
+  categories: Array<"COFFEE" | "TEA" | "BREAKFAST" | "LUNCH" | "DESSERTS">
   activeCategory: string
-  onCategoryChange: (category: string) => void
+  onCategoryChange: (category: "COFFEE" | "TEA" | "BREAKFAST" | "LUNCH" | "DESSERTS") => void
 }
 
 export function CategoryNav({ categories, activeCategory, onCategoryChange }: CategoryNavProps) {
